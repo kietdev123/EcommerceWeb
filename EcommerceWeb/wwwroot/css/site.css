@@ -71,3 +71,16 @@ body {
         opacity: 1;
         font-size: 26px;
     }
+
+@media screen and (max-width: 450px) /* height >= 820 px */
+{
+   .app-logo {
+      
+   }
+}
+
+@media screen and (max-width: 330px) {
+    html {
+        width: 330px;
+    }
+}
