@@ -55,9 +55,10 @@ body {
     opacity: 0.5;
 }
     .custom-nav-item:hover {
-        color : black;
+        color: black;
         opacity: 1;
         text-decoration: underline;
+        cursor: pointer;
     }
 
 .custom-nav-icon {
@@ -70,6 +71,7 @@ body {
         color: black;
         opacity: 1;
         font-size: 26px;
+        cursor: pointer;
     }
 
 @media screen and (max-width: 450px) /* height >= 820 px */
@@ -83,4 +85,28 @@ body {
     html {
         width: 330px;
     }
+}
+
+@keyframes sidebar-open {
+    from {
+        left: -1000px
+    }
+
+    to {
+        left: 0px
+    }
+}
+
+@keyframes sidebar-close {
+    from {
+        left: 0px
+    }
+
+    to {
+        left: -1000px
+    }
+}
+
+.event-hover:hover {
+    cursor: pointer;
 }

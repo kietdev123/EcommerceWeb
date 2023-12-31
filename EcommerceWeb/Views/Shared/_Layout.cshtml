@@ -18,17 +18,17 @@
             </div>
         </div>
 
-        <header>
+        <header class="position-absolute start-0 end-0">
             <nav id="custom-nav"
-                 class="navbar navbar-expand-md navbar-toggleable-md navbar-light bg-white border-bottom box-shadow mb-3 d-flex py-3 justify-content-between px-3">
+                 class="navbar navbar-expand-lg navbar-toggleable-lg navbar-light bg-white border-bottom box-shadow d-flex py-3 justify-content-between px-3 ">
 
                  <div class="container">
                     <img id="app-logo" style="width:200px" src="~/assets/app_logo.png" />
 
-                    <div class="d-none d-md-block" style="width:50px"></div>
+                    <div class="d-none d-lg-block" style="width:50px"></div>
 
                     <!--List nav item-->
-                    <div class="navbar-collapse collapse d-md-inline-flex">
+                    <div class="navbar-collapse collapse  d-lg-inline-flex">
                         <ul class="navbar-nav flex-grow-1">
                             <!--
                                 <li class="nav-item">
@@ -74,7 +74,7 @@
                                 <i class="bi bi-search px-2 custom-nav-icon py-2"></i>
                             </li>
 
-                             <div class="d-none d-md-block">
+                             <div class="d-none d-lg-block">
                                 <li class="nav-item d-flex align-items-center ">
                                     <i class="bi bi-person px-2 custom-nav-icon py-2"></i>
                                 </li>
@@ -87,7 +87,7 @@
                                 </i>
 
 
-                                <div class="position-absolute d-flex justify-content-center align-item-center"
+                            <div class="position-absolute d-flex justify-content-center align-item-center event-hover"
                                      style="width:16px;height:16px;background-color:black; bottom:12px;right:0px;border-radius:32px">
                                     <div style="color:white; font-size:10px">
                                         1
@@ -96,21 +96,81 @@
                             </li>
 
 
-                        <!--Button appear when screen < md-->
-                        <div class="px-3 d-flex justify-content-center align-item-center d-md-none">
+                            <input type="checkbox" id="my-toggler" style="display:none"/>
+                        <!--Button appear when screen < lg-->
+                        <label id="menu-btn" for="my-toggler" class="navbar-toggler px-3 d-flex justify-content-center align-item-center d-lg-none mx-2 event-hover">
+                            <!--
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                                     aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
-                            </button>
-                         </div>
+                            </button>-->
+
+                           
+                            <label class="d-flex justify-content-center align-items-center event-hover" for="my-toggler">
+                                    <span class="navbar-toggler-icon">
+                                      
+                                    </span>
+                             </label>
+                    
+                           
+                         </label>
 
                   
                     </div>
 
-
-                 </div>
-                
+                 </div>            
             </nav>
+
+         
+            <!-- opacity backgroud -->
+            <div id="sidebar-bg" class="position-relative top-0 start-0 w-100 vh-100" style="background-color: rgba(0,0,0,0.4)">
+                <div id="sidebar" class=" position-relative top-0 d-lg-none col-10 col-md-5 vh-100"
+                       style="background-color:white; left: 0px">
+                    <ul class="navbar-nav flex-grow-1">
+                        <!--
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        -->
+                        <li class="nav-item custom-nav-item">
+                            <a class="nav-link text-dark">New</a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link custom-nav-item" style="color:red; opacity:1;font-weight:500">Sale</a>
+                        </li>
+
+                        <li class="nav-item custom-nav-item">
+                            <a class="nav-link text-dark">Gifts</a>
+                        </li>
+
+                        <li class="nav-item custom-nav-item">
+                            <a class="nav-link text-dark">Rain</a>
+                        </li>
+
+                        <li class="nav-item custom-nav-item">
+                            <a class="nav-link text-dark">All Weather</a>
+                        </li>
+
+                        <li class="nav-item custom-nav-item">
+                            <a class="nav-link text-dark">Shop All</a>
+                        </li>
+
+                        <li class="nav-item custom-nav-item">
+                            <a class="nav-link text-dark">Values</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+            
+           
+
+
         </header>
     </div>
 
@@ -187,7 +247,44 @@
                 $("#app-logo").width(200);
             }
         });
-     
+        
+
+        // sidebar event
+
+        $('#my-toggler').click(function () {
+            let val = $('#my-toggler').prop('checked');
+            //console.log(val);
+            if (val == true) {
+                if ($('#sidebar').css('left') == '-1000px' || $('#sidebar-bg').css('display') == 'none') {
+                    $('#sidebar').css('animation', 'sidebar-open 0.5s ease');
+                    $('#sidebar').css('animation-fill-mode', 'forwards');
+                    $('#sidebar-bg').css('display', 'block');
+               }
+               
+                //console.log('open');
+            }
+            else {
+                if ($('#sidebar').css('left') == '0px' || $('#sidebar-bg').css('display') == 'block') {
+                    $('#sidebar').css('animation', 'sidebar-close 0.5s ease');
+                    $('#sidebar').css('animation-fill-mode', 'forwards');
+                    $('#sidebar-bg').css('display', 'none');
+                }
+                
+            }
+        });
+
+        $('#sidebar').click(function (event) {
+            event.stopPropagation();
+           console.log('sidebar click')
+        });
+
+        $('#sidebar-bg').click(function () {
+            if ($('#sidebar').css('left') == '0px' || $('#sidebar-bg').css('display') == 'block') {
+                $('#sidebar').css('animation', 'sidebar-close 0.5s ease');
+                $('#sidebar').css('animation-fill-mode', 'forwards');
+                $('#sidebar-bg').css('display', 'none');
+            }
+        });
     </script>
 </body>
 </html>
