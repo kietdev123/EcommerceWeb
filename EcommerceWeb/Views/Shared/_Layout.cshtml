@@ -38,31 +38,35 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                             </li>
                             -->
-                            <li class="nav-item custom-nav-item">
+                            <li class="nav-item custom-nav-item" onclick="location.href='https://localhost:44338?title=new';">
                                 <a class="nav-link text-dark">New</a>
                             </li>
 
-                            <li class="nav-item ">
+                            <li class="nav-item " onclick="location.href='https://localhost:44338?title=sales';">
                                 <a class="nav-link custom-nav-item" style="color:red; opacity:1;font-weight:500">Sale</a>
                             </li>
 
-                            <li class="nav-item custom-nav-item">
-                                <a class="nav-link text-dark">Gifts</a>
+                            <li class="nav-item custom-nav-item" onclick="location.href='https://localhost:44338?title=gift';">
+                                <a class="nav-link text-dark" >Gifts</a>
                             </li>
 
-                            <li class="nav-item custom-nav-item">
+                            <li class="nav-item custom-nav-item" onclick="location.href='https://localhost:44338?title=rain';">
                                 <a class="nav-link text-dark">Rain</a>
                             </li>
 
-                            <li class="nav-item custom-nav-item">
+                            <li class="nav-item custom-nav-item" onclick="location.href='https://localhost:44338?title=snow';">
+                                <a class="nav-link text-dark">Snow</a>
+                            </li>
+
+                            <li class="nav-item custom-nav-item" onclick="location.href='https://localhost:44338?title=all-weather';">
                                 <a class="nav-link text-dark">All Weather</a>
                             </li>
 
-                            <li class="nav-item custom-nav-item">
+                            <li class="nav-item custom-nav-item" onclick="location.href='https://localhost:44338?title=shop-all';">
                                 <a class="nav-link text-dark">Shop All</a>
                             </li>
 
-                            <li class="nav-item custom-nav-item">
+                            <li class="nav-item custom-nav-item" onclick="location.href='https://localhost:44338?title=values';">
                                 <a class="nav-link text-dark">Values</a>
                             </li>
                         </ul>
@@ -123,47 +127,71 @@
 
          
             <!-- opacity backgroud -->
-            <div id="sidebar-bg" class="position-relative top-0 start-0 w-100 vh-100" style="background-color: rgba(0,0,0,0.4)">
-                <div id="sidebar" class=" position-relative top-0 d-lg-none col-10 col-md-5 vh-100"
-                       style="background-color:white; left: 0px">
-                    <ul class="navbar-nav flex-grow-1">
-                        <!--
+            <div id="sidebar-bg" class="position-relative top-0 start-0 w-100 vh-100" style="background-color: rgba(0,0,0,0.4);display: none">
+                <!--Begin side bar-->
+                <div id="sidebar" class=" position-relative top-0 d-lg-none col-10 col-md-5  overflow-auto"
+                     style="background-color:white; left: 0px;">
+
+                    <div class="" style="">
+                        <ul class="navbar-nav  py-5">
+                            <!--
+                                <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
                             <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        -->
-                        <li class="nav-item custom-nav-item">
-                            <a class="nav-link text-dark">New</a>
-                        </li>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                            -->
+                            <li class="nav-item sidebar-item px-5 py-2" onclick="location.href='https://localhost:44338?title=new';">
+                                <a class="nav-link text-dark">New</a>
+                            </li>
 
-                        <li class="nav-item ">
-                            <a class="nav-link custom-nav-item" style="color:red; opacity:1;font-weight:500">Sale</a>
-                        </li>
+                            <li class="nav-item px-5 py-2 sidebar-item" onclick="location.href='https://localhost:44338?title=sale';">
+                                <a class="nav-link " style="color:red; opacity:1;font-weight:500">Sale</a>
+                            </li>
 
-                        <li class="nav-item custom-nav-item">
-                            <a class="nav-link text-dark">Gifts</a>
-                        </li>
+                            <li class="nav-item sidebar-item px-5 py-2" onclick="location.href='https://localhost:44338?title=gifts';">
+                                <a class="nav-link text-dark">Gifts</a>
+                            </li>
 
-                        <li class="nav-item custom-nav-item">
-                            <a class="nav-link text-dark">Rain</a>
-                        </li>
+                            <li class="nav-item sidebar-item px-5 py-2" onclick="location.href='https://localhost:44338?title=rain';">
+                                <a class="nav-link text-dark">Rain</a>
+                            </li>
 
-                        <li class="nav-item custom-nav-item">
-                            <a class="nav-link text-dark">All Weather</a>
-                        </li>
+                            <li class="nav-item sidebar-item px-5 py-2" onclick="location.href='https://localhost:44338?title=snow';">
+                                <a class="nav-link text-dark">Snow</a>
+                            </li>
 
-                        <li class="nav-item custom-nav-item">
-                            <a class="nav-link text-dark">Shop All</a>
-                        </li>
+                            <li class="nav-item  sidebar-item px-5 py-2" onclick="location.href='https://localhost:44338?title=all-weather';">
+                                <a class="nav-link text-dark">All Weather</a>
+                            </li>
 
-                        <li class="nav-item custom-nav-item">
-                            <a class="nav-link text-dark">Values</a>
-                        </li>
-                    </ul>
+                            <li class="nav-item  sidebar-item px-5 py-2" onclick="location.href='https://localhost:44338?title=shop-all';">
+                                <a class="nav-link text-dark">Shop All</a>
+                            </li>
 
+                            <li class="nav-item  sidebar-item px-5 py-2" onclick="location.href='https://localhost:44338?title=values';">
+                                <a class="nav-link text-dark">Values</a>
+                            </li>
+                        </ul>
+
+                        <div class="sidebar-footer d-flex flex-column justify-content-center px-3 py-3" style="width:100%; height:160px">
+                            <div class="h-50">
+                                <div class="event-hover custom-sidebar-footer-icon py-2">
+                                    <i class="bi bi-person  ps-3  me-1 "></i>
+                                    <div class="h-auto d-inline-block" style="font-weight: 500;font-size: 16px">Log in</div>
+                                </div>
+                                
+                            </div>
+                            <div class="d-flex h-50">
+                                <i class="bi bi-facebook px-3  py-2 custom-sidebar-footer-icon"></i>
+                                <i class="bi bi-pinterest px-3  py-2 custom-sidebar-footer-icon"></i>
+                                <i class="bi bi-instagram px-3  py-2 custom-sidebar-footer-icon"></i>
+                                <i class="bi bi-tiktok px-3  py-2 custom-sidebar-footer-icon"></i>
+                            </div>
+                        </div>
+                     </div>
+                   
                 </div>
             </div>
 
@@ -192,10 +220,31 @@
     @await RenderSectionAsync("Scripts", required: false)
 
     <script>
+        const navItemNames = [
+            "new",
+            "sale",
+            "gift",
+            "rain",
+            "snow",
+            "all-weather",
+            "shop-all", 
+            "values", 
+        ];
+
+        function getIndex(str){
+            for (let i = 0 ; i < navItemNames.length ;i++){
+                if (str.includes(navItemNames[i])) {
+                    console.log(str, navItemNames[i], i);
+                    return i;
+                }
+            }
+            return 0;
+        }
+
         var $win = $(window);
 
         // scroll event
-        $win.scroll(function () {
+        $win.scroll(function () {          
             var win = $(this);
         
             if ($win.scrollTop() == 0) {
@@ -234,57 +283,122 @@
                 }, 0.5);
             }
 
+            resizeSideBar();
         });
         
-        // resize screen event
-        $(window).on('resize', function () {
-            var win = $(this);   
-            if (win.width() <= 450) {
-                // resize logo
-                $("#app-logo").width( ( (win.width() * 200) / 450 ) * 0.5 );
+        function openSideBar(){
+            if ($('#sidebar').css('left') == '-1000px' || $('#sidebar-bg').css('display') == 'none') {
+                $('#sidebar').css('animation', 'sidebar-open 0.5s ease');
+                $('#sidebar').css('animation-fill-mode', 'forwards');
+                $('#sidebar-bg').css('display', 'block');
+                $('body').css('overflow-y', 'hidden');
             }
-            else {
-                $("#app-logo").width(200);
-            }
-        });
-        
+        }
 
-        // sidebar event
-
-        $('#my-toggler').click(function () {
-            let val = $('#my-toggler').prop('checked');
-            //console.log(val);
-            if (val == true) {
-                if ($('#sidebar').css('left') == '-1000px' || $('#sidebar-bg').css('display') == 'none') {
-                    $('#sidebar').css('animation', 'sidebar-open 0.5s ease');
-                    $('#sidebar').css('animation-fill-mode', 'forwards');
-                    $('#sidebar-bg').css('display', 'block');
-               }
-               
-                //console.log('open');
-            }
-            else {
-                if ($('#sidebar').css('left') == '0px' || $('#sidebar-bg').css('display') == 'block') {
-                    $('#sidebar').css('animation', 'sidebar-close 0.5s ease');
-                    $('#sidebar').css('animation-fill-mode', 'forwards');
-                    $('#sidebar-bg').css('display', 'none');
-                }
-                
-            }
-        });
-
-        $('#sidebar').click(function (event) {
-            event.stopPropagation();
-           console.log('sidebar click')
-        });
-
-        $('#sidebar-bg').click(function () {
+        function hideSideBar() {
             if ($('#sidebar').css('left') == '0px' || $('#sidebar-bg').css('display') == 'block') {
                 $('#sidebar').css('animation', 'sidebar-close 0.5s ease');
                 $('#sidebar').css('animation-fill-mode', 'forwards');
                 $('#sidebar-bg').css('display', 'none');
             }
+        }
+
+        // resize screen event
+        $(window).on('resize', function () {
+            var win = $(this);
+            // resize logo
+            if (win.width() <= 450) {             
+                $("#app-logo").width(((win.width() * 200) / 450) * 0.5);
+            }
+            else {
+                $("#app-logo").width(200);
+            }
+            hideSideBar();
         });
+
+        // event open or close sidebar
+        $('#my-toggler').click(function () {
+            $('body').css('overflow-y', 'auto');
+            let val = $('#my-toggler').prop('checked');
+            if (val == true) openSideBar();       
+            else hideSideBar();  
+        });
+
+        $('#sidebar').click(function (event) {
+            event.stopPropagation();
+        });
+
+        // event click on background when sidebar is opening
+        $('#sidebar-bg').click(function () {
+            hideSideBar();
+        });
+
+        function markSideBarItemChosen() {
+            let win = $(this);
+            let loc = win[0].location.href;
+            let pos = getIndex(loc);                    
+            $('#sidebar .sidebar-item').eq(pos).css('background-color', 'rgba(0,0,0,0.1)');
+        }
+
+        function markNavBarItemChosen() {
+            let win = $(this);
+            let loc = win[0].location.href;
+            let pos = getIndex(loc);       
+            
+            $('.custom-nav-item').eq(pos).css('color', 'black');
+            $('.custom-nav-item').eq(pos).css('opacity', '1');
+            $('.custom-nav-item').eq(pos).css('text-decoration', 'underline');  
+        }
+
+        // event hover sidebar item
+        $("#sidebar .sidebar-item").hover(function () {
+            $(this).css("background-color", "rgba(0,0,0,0.1)");
+        }, function () {
+            $(this).css("background-color", "white");
+            markSideBarItemChosen();
+        });
+
+        // event hover navbar item
+        $(".custom-nav-item").hover(function () {
+            $(this).css("color", "black");
+            $(this).css("opacity", "1");
+            $(this).css("text-decoration", "underline");
+            $(this).css("cursor", "pointer");
+        }, function () {
+            $(this).css("opacity", "0.5");
+            $(this).css("text-decoration", "none");
+            markNavBarItemChosen();
+        });
+
+        window.addEventListener('load', function() {
+            // reset sidebar-iten background
+            $('#sidebar .sidebar-item').css('background-color', 'white');
+            markSideBarItemChosen();
+
+            // reset navbar-iten style
+            $('.custom-nav-item').css('text-decoration', 'none');
+            $('.custom-nav-item').css('opacity', '0.5');
+
+            // Special style for sale
+            $('.custom-nav-item').eq(1).css('opacity', '1');
+            $('.custom-nav-item').eq(1).css('font-weight', '500');
+
+            markNavBarItemChosen();
+            resizeSideBar();
+        });
+
+        function resizeSideBar(){
+            let navHeight = $("#custom-nav").css("height");
+            let navInfoHeight = $("#nav-top-info").css("height");
+            let winHeight = $(window).height();
+            let value = 0;
+            if ($("#nav-top-info").css('display') == "block") {
+                $("#sidebar").css("height", `calc( 100% - ${navHeight} - ${navInfoHeight} )`);
+            }
+            else {
+                $("#sidebar").css("height", `calc( 100% - ${navHeight} )`);
+            }
+        }
     </script>
 </body>
 </html>

@@ -110,3 +110,32 @@ body {
 .event-hover:hover {
     cursor: pointer;
 }
+
+.sidebar-item {
+    font-size: 17px
+}
+
+.sidebar-item:hover {
+    cursor: pointer;
+    background-color : rgba(0,0,0,0.1);
+}
+
+.sidebar-footer {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.sidebar-footer-item {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.custom-sidebar-footer-icon {
+    color: black;
+    font-size: 24px;
+}
+
+    .custom-sidebar-footer-icon:hover {
+        color: black;
+        opacity: 1;
+        font-size: 26px;
+        cursor: pointer;
+    }
