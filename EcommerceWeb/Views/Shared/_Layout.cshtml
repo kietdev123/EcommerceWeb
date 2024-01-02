@@ -269,6 +269,7 @@
                 $('#sidebar').css('animation', 'sidebar-open 0.5s ease');
                 $('#sidebar').css('animation-fill-mode', 'forwards');
                 $('#sidebar-bg').css('display', 'block');
+                // remove scroll
                 $('body').css('overflow-y', 'hidden');
             }
         }
@@ -278,6 +279,8 @@
                 $('#sidebar').css('animation', 'sidebar-close 0.5s ease');
                 $('#sidebar').css('animation-fill-mode', 'forwards');
                 $('#sidebar-bg').css('display', 'none');
+                // restore scroll
+                $('body').css('overflow-y', 'auto');
             }
         }
 
