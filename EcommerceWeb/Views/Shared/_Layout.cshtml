@@ -1,4 +1,18 @@
-﻿<!DOCTYPE html>
+﻿@{
+    List<NavItemViewModel> navItems = new List<NavItemViewModel>()
+    {
+        new NavItemViewModel{keywordInUrl = "new" , content = "New"},
+        new NavItemViewModel{keywordInUrl = "sale" , content = "Sale"},
+        new NavItemViewModel{keywordInUrl = "gifts" , content = "Gifts"},
+        new NavItemViewModel{keywordInUrl = "rain" , content = "Rain"},
+        new NavItemViewModel{keywordInUrl = "snow" , content = "Snow"},
+        new NavItemViewModel{keywordInUrl = "all-weather" , content = "All Weather"},
+        new NavItemViewModel{keywordInUrl = "shop-all" , content = "Shop All"},
+        new NavItemViewModel{keywordInUrl = "values" , content = "Values"},
+    };
+
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -37,38 +51,23 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                             </li>
-                            -->
-                            <li class="nav-item custom-nav-item" onclick="location.href='https://localhost:44338?title=new';">
-                                <a class="nav-link text-dark">New</a>
-                            </li>
+                            -->                          
+                            @for (var i = 0; i < navItems.Count(); i++)
+                            {
+                                @if (i == 1)
+                                {
 
-                            <li class="nav-item " onclick="location.href='https://localhost:44338?title=sales';">
-                                <a class="nav-link custom-nav-item" style="color:red; opacity:1;font-weight:500">Sale</a>
-                            </li>
+                                    <a class="custom-nav-item  nav-link"
+                               style="color:red;font-weight:500"
+                               href="/?title=@navItems[i].keywordInUrl">@navItems[i].content</a>
+                                }
+                                else
+                                {
 
-                            <li class="nav-item custom-nav-item" onclick="location.href='https://localhost:44338?title=gift';">
-                                <a class="nav-link text-dark" >Gifts</a>
-                            </li>
+                                    <a class="custom-nav-item  nav-link text-dark" href="/?title=@navItems[i].keywordInUrl">@navItems[i].content</a>
+                                }
 
-                            <li class="nav-item custom-nav-item" onclick="location.href='https://localhost:44338?title=rain';">
-                                <a class="nav-link text-dark">Rain</a>
-                            </li>
-
-                            <li class="nav-item custom-nav-item" onclick="location.href='https://localhost:44338?title=snow';">
-                                <a class="nav-link text-dark">Snow</a>
-                            </li>
-
-                            <li class="nav-item custom-nav-item" onclick="location.href='https://localhost:44338?title=all-weather';">
-                                <a class="nav-link text-dark">All Weather</a>
-                            </li>
-
-                            <li class="nav-item custom-nav-item" onclick="location.href='https://localhost:44338?title=shop-all';">
-                                <a class="nav-link text-dark">Shop All</a>
-                            </li>
-
-                            <li class="nav-item custom-nav-item" onclick="location.href='https://localhost:44338?title=values';">
-                                <a class="nav-link text-dark">Values</a>
-                            </li>
+                            }
                         </ul>
                     </div>
 
@@ -142,37 +141,22 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                             </li>
                             -->
-                            <li class="nav-item sidebar-item px-5 py-2" onclick="location.href='https://localhost:44338?title=new';">
-                                <a class="nav-link text-dark">New</a>
-                            </li>
+                            @for (var i = 0; i < navItems.Count(); i++)
+                            {
+                                @if (i == 1)
+                                {
+                                  
+                                    <a class="sidebar-item px-5 py-3 nav-link fs-2"
+                               style="color:red;font-weight:500"
+                               href="/?title=@navItems[i].keywordInUrl">@navItems[i].content</a>
+                                }
+                                else
+                                {
 
-                            <li class="nav-item px-5 py-2 sidebar-item" onclick="location.href='https://localhost:44338?title=sale';">
-                                <a class="nav-link " style="color:red; opacity:1;font-weight:500">Sale</a>
-                            </li>
-
-                            <li class="nav-item sidebar-item px-5 py-2" onclick="location.href='https://localhost:44338?title=gifts';">
-                                <a class="nav-link text-dark">Gifts</a>
-                            </li>
-
-                            <li class="nav-item sidebar-item px-5 py-2" onclick="location.href='https://localhost:44338?title=rain';">
-                                <a class="nav-link text-dark">Rain</a>
-                            </li>
-
-                            <li class="nav-item sidebar-item px-5 py-2" onclick="location.href='https://localhost:44338?title=snow';">
-                                <a class="nav-link text-dark">Snow</a>
-                            </li>
-
-                            <li class="nav-item  sidebar-item px-5 py-2" onclick="location.href='https://localhost:44338?title=all-weather';">
-                                <a class="nav-link text-dark">All Weather</a>
-                            </li>
-
-                            <li class="nav-item  sidebar-item px-5 py-2" onclick="location.href='https://localhost:44338?title=shop-all';">
-                                <a class="nav-link text-dark">Shop All</a>
-                            </li>
-
-                            <li class="nav-item  sidebar-item px-5 py-2" onclick="location.href='https://localhost:44338?title=values';">
-                                <a class="nav-link text-dark">Values</a>
-                            </li>
+                                    <a class="sidebar-item px-5 py-3 nav-link text-dark fs-2" href="/?title=@navItems[i].keywordInUrl">@navItems[i].content</a>
+                                }
+                                
+                            }
                         </ul>
 
                         <div class="sidebar-footer d-flex flex-column justify-content-center px-3 py-3" style="width:100%; height:160px">
@@ -194,11 +178,6 @@
                    
                 </div>
             </div>
-
-            
-           
-
-
         </header>
     </div>
 
@@ -234,7 +213,6 @@
         function getIndex(str){
             for (let i = 0 ; i < navItemNames.length ;i++){
                 if (str.includes(navItemNames[i])) {
-                    console.log(str, navItemNames[i], i);
                     return i;
                 }
             }
@@ -348,6 +326,11 @@
             $('.custom-nav-item').eq(pos).css('color', 'black');
             $('.custom-nav-item').eq(pos).css('opacity', '1');
             $('.custom-nav-item').eq(pos).css('text-decoration', 'underline');  
+
+            if (pos != 1) {
+                $('.custom-nav-item').eq(1).css('color', 'red');
+                $('.custom-nav-item').eq(1).css('opacity', '1');
+            }
         }
 
         // event hover sidebar item
