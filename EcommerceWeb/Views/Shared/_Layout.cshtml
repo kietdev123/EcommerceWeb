@@ -1,4 +1,5 @@
-﻿@{
+﻿@using EcommerceWeb.Models.Layout;
+@{
     List<NavItemViewModel> navItems = new List<NavItemViewModel>()
     {
         new NavItemViewModel{keywordInUrl = "new" , content = "New"},
@@ -11,6 +12,35 @@
         new NavItemViewModel{keywordInUrl = "values" , content = "Values"},
     };
 
+    List<NavItemViewModel> helpItems = new List<NavItemViewModel>()
+    {
+        new NavItemViewModel{keywordInUrl = "new" , content = "Size guide"},
+        new NavItemViewModel{keywordInUrl = "sale" , content = "Shipping Policy"},
+        new NavItemViewModel{keywordInUrl = "gifts" , content = "Refund Policy"},
+        new NavItemViewModel{keywordInUrl = "rain" , content = "Wear and Care FAQ"},
+    };
+
+    List<NavItemViewModel> aboutUsItems = new List<NavItemViewModel>()
+    {
+        new NavItemViewModel{keywordInUrl = "" , content = "Values"},
+        new NavItemViewModel{keywordInUrl = "sale" , content = "Contact Us"},
+    };
+
+    List<NavItemViewModel> policyItems = new List<NavItemViewModel>()
+    {
+        new NavItemViewModel{keywordInUrl = "refund-policy" , content = "Refund policy"},
+        new NavItemViewModel{keywordInUrl = "privacy-policy" , content = "Privacy policy"},
+        new NavItemViewModel{keywordInUrl = "terms-of-service" , content = "Terms of service"},
+        new NavItemViewModel{keywordInUrl = "shipping-policy" , content = "Shipping policy"},
+        new NavItemViewModel{keywordInUrl = "contact-information" , content = "Contact information"},
+    };
+
+    List<PaymentItemViewModel> paymentItems = new List<PaymentItemViewModel>()
+    {
+        new PaymentItemViewModel{imgUrl = "~/assets/payments/logo_pay_pal.png" , content = "PayPal"},
+        new PaymentItemViewModel{imgUrl = "~/assets/payments/logo_momo.png" , content = "Momo"},
+        new PaymentItemViewModel{imgUrl = "~/assets/payments/logo_visa.png" , content = "Visa"},
+    };
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -183,16 +213,77 @@
 
     
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="custom-footer py-5">
         <div class="container">
-            &copy; 2023 - KenShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row row-cols-1 row-cols-md-4">
+                <div class="col py-2">
+                    <div class="footer-title">THESUS</div>
+                    <div class="footer-title">Socially and environmentally progressive outdoor footwear</div>
+                    <div class="py-2 d-flex">
+                        <i class="bi bi-facebook  footer-icon pe-3"></i>
+                        <i class="bi bi-pinterest  footer-icon pe-3"></i>
+                        <i class="bi bi-instagram  footer-icon pe-3"></i>
+                        <i class="bi bi-tiktok footer-icon pe-3"></i>
+                    </div>
+                </div>
+                <div class="col py-2">
+                    <div class="footer-title">Our Shop</div>
+                    @for (var i = 0; i < navItems.Count(); i++)
+                    {
+                        <div class="footer-nav-item py-1">@navItems[i].content</div>
+                    }
+                </div>
+                <div class="col py-2">
+                    <div class="footer-title" >Help</div>
+                        @for (var i = 0; i < helpItems.Count(); i++)
+                        {
+                        <div class="footer-nav-item py-1">@helpItems[i].content</div>
+                        }
+                 </div>
+                <div class="col py-2">
+                    <div class="footer-title">About us</div>
+                    @for (var i = 0 ;i < aboutUsItems.Count(); i++)
+                    {
+                        <div class="footer-nav-item py-1">@aboutUsItems[i].content</div>
+                    }         
+                </div>
+            </div>
+            
+            <div class="d-flex justify-content-center py-2">
+
+                @for (var i = 0; i < paymentItems.Count(); i++)
+                {
+                    <div class="payment-item d-flex justify-content-center align-items-center mx-2">
+
+                        <img src="@Url.Content(@paymentItems[i].imgUrl)"  style="height: 10px" />
+
+                        <span class="my-tooltiptext">@paymentItems[i].content</span>
+                    </div>
+                }
+            </div>
+            <div class="d-flex flex-wrap justify-content-center py-2" style="display:block">
+                <div class="py-1" style="opacity:0.5 ">
+                    2024
+                </div>
+                @for (var i = 0; i < policyItems.Count(); i++)
+                {
+                    <div class="d-flex justify-content-center align-items-center py-1">
+                        <div class="mx-2" style="width: 5px;height: 5px;border-radius:60px;background-color: white;opacity:0.5"></div>
+                        <div  class="footer-nav-item" style="font-size: 14px">@policyItems[i].content</div>
+                    </div>
+                    
+                }
+            </div>
+            <!--&copy; 2023 - KenShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>-->
         </div>
     </footer>
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

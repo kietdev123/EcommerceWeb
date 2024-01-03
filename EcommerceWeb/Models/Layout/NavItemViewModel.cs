@@ -1,4 +1,4 @@
-﻿namespace EcommerceWeb.Models
+﻿namespace EcommerceWeb.Models.Layout
 {
     public class NavItemViewModel
     {
